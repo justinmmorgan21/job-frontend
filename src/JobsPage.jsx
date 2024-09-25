@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {JobsIndex} from "./JobsIndex";
 import {JobsNew} from "./JobsNew";
+import {JobsList} from "./JobsList";
 import {Modal} from "./Modal";
 export function JobsPage() {
 
@@ -41,10 +42,8 @@ export function JobsPage() {
 
   return (
     <main>
+      <JobsList onJobSelect={handleOpenNewJobModal}/>
       <JobsIndex jobs={jobs} onIndex={handleIndex}/>
-      <a onClick={()=>handleOpenNewJobModal("Babysitting")}>Babysitting</a>
-      <br />
-      <a onClick={()=>handleOpenNewJobModal("Dog Walking")}>Dog Walking</a>
       <Modal openCreate={modalVisible} onClose={handleCloseModal}>
         <h1>THIS IS WHERE TO MAKE A NEW JOB</h1>
       < JobsNew onCreate={handleCreate} chosenTitle={jobTitle}/>
