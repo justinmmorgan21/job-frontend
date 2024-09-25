@@ -41,7 +41,6 @@ footer {
 }
 
 #new-student input,
-textarea,
 url {
   font-size: 1.4em;
   height: 28px;
@@ -92,4 +91,15 @@ main {
 .card {
   padding: 15px;
   background-color: #EEE;
+}
+
+input,
+textarea {
+  margin: 15px;
+  width: 60%;
+}
+
+#new-job {
+  width: 400px;
+  margin: 20px;
 }
