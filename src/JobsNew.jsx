@@ -11,7 +11,7 @@ export function JobsNew(props) {
     <>
     <form id="new-job" onSubmit={handleSubmit}>
       <label htmlFor="title">Job:</label>
-      <input type="text" id="title-input" name="title" /><br />
+      <input type="text" id="title-input" name="title" defaultValue={props.chosenTitle}/><br />
       <label htmlFor="date-time">Start date:</label>
       <input type="datetime-local" id="date-time-input" name="date-time" /><br />
       <label htmlFor="duration">Duration:</label>

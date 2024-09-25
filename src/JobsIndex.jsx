@@ -13,6 +13,7 @@ export function JobsIndex(props) {
         </div>
       ))}
     </div>
+      <br />
     </>
   );
 }
