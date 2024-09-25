@@ -9,7 +9,7 @@ export function JobsIndex(props) {
         <p>{job.date_time}</p>
         <p>{job.duration}</p>
         <p>{job.details}</p>
-        <button>More Info</button>
+        <button onClick={() => props.onShow(job)}>More Info</button>
         </div>
       ))}
     </div>
