@@ -24,7 +24,7 @@ export function JobsPage() {
     axios.post("http://localhost:3000/jobs.json", params).then(response => {
       setJobs([...jobs, response.data]);
       successCallback();
-      handleClose();
+      handleCloseModal();
     })
   }
 
@@ -40,10 +40,11 @@ export function JobsPage() {
 
   const handleUpdate = (params, id, successCallback) => {
     console.log("Update");
-    axios.post("http://localhost:3000/jobs.json", params).then(response => {
+    axios.patch(`http://localhost:3000/jobs/${id}.json`, params).then(response => {
+      console.log(response.data);
       setJobs(jobs.map(job => (id === job.id) ? response.data : job));
       successCallback();
-      handleClose();
+      handleCloseModal();
     })
   }
 
